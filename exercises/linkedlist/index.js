@@ -28,6 +28,33 @@ class LinkedList {
 		}
 		return counter;
 	}
+
+	getFirst() {
+		return this.head;
+	}
+
+	getLast() {
+		let node = this.head;
+
+		while (node) {
+			if (node.next === null) {
+				return node;
+			} else {
+				node = node.next;
+			}
+		}
+	}
+
+	clear() {
+		this.head = null;
+	}
+
+	removeFirst() {
+		if (!this.head) {
+			return;
+		} 
+			this.head = this.head.next;
+	}
 }
 
 module.exports = { Node, LinkedList };
